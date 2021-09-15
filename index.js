@@ -6,7 +6,7 @@ const expo = new Expo()
 const expressServer = express();
 
 expressServer.use(cors())
-expressServer.listen(process.env.PORT || 3000,()=> {
+expressServer.listen(process.env.PORT || 3000,() => {
     console.log("Serveur en écoute sur " + (process.env.PORT || 3000));
     expressServer.get("/", function(req,res) {
         const token = req.query.token;
@@ -21,7 +21,7 @@ expressServer.listen(process.env.PORT || 3000,()=> {
                     body : "Notification test",
                     date : { test : "dsfdsgdf"}
                 }
-            ]
+            ];
 
             expo.sendPushNotificationsAsync(messages).then(ticket => {
                 res.send({ticket : ticket})
@@ -30,5 +30,5 @@ expressServer.listen(process.env.PORT || 3000,()=> {
                 res.send({err : "Erreur d'envoi"})
             })
         }
-    })
-})
+    });
+});
