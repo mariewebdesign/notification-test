@@ -18,8 +18,8 @@ expressServer.listen(process.env.PORT || 3000,() => {
                 {
                     to : token,
                     sound : "default",
-                    body : "Notification test",
-                    date : { test : "dsfdsgdf"}
+                    body : "Notification test 2",
+                    date : { test : "marie"}
                 }
             ];
 
